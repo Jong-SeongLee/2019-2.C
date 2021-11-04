@@ -1,4 +1,5 @@
 //2019.7.26작성
+//별을 키보드로 이동해보는 프로그램
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 #include <stdlib.h>
