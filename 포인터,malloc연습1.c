@@ -1,4 +1,4 @@
-//2019.8.15 포인터와 malloc 활용 연습
+//2019.8.5 포인터와 malloc 활용 연습
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 #include <stdlib.h>
