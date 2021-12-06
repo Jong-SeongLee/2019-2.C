@@ -1,3 +1,5 @@
+//2019.8.13 ìž‘ì„±
+
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 #include <stdlib.h>
@@ -22,10 +24,10 @@ int main() {
 	input();
 	input();
 	input();
-	view(root);//ÁßÀ§Å½»ö
+	view(root);//ì¤‘ìœ„íƒìƒ‰
 }
 
-void view(bin*show) {//ÁßÀ§¹ý
+void view(bin*show) {//ì¤‘ìœ„ë²•
 	if (show->left != NULL)
 		view(show->left);
 	printf("%d\n", show->num);
@@ -35,22 +37,22 @@ void view(bin*show) {//ÁßÀ§¹ý
 
 void input() {
 	int num;
-	printf("Á¤¼ö = ");
+	printf("ì •ìˆ˜ = ");
 	scanf("%d", &num);
-	if (root == NULL) { //Ã³À½ ÀÔ·Â¹Þ´Â ¼ýÀÚ¿¡ ´ëÇÑ Ã³¸®
+	if (root == NULL) { //ì²˜ìŒ ìž…ë ¥ë°›ëŠ” ìˆ«ìžì— ëŒ€í•œ ì²˜ë¦¬
 		root = (bin*)malloc(sizeof(bin));
 		root->num = num;
 		root->left = NULL;
 		root->right = NULL;
 	}
-	else //µÎ¹øÂ° ¼ýÀÚºÎÅÍ
+	else //ë‘ë²ˆì§¸ ìˆ«ìžë¶€í„°
 		make_tree(root, num);
 }
 
-void make_tree(bin*top, int num) { //ÁßÀ§¹ý
+void make_tree(bin*top, int num) { //ì¤‘ìœ„ë²•
 	bin*data;
-	if (top->num > num) { //»õ·Î¿î ¼ýÀÚ¿Í ±âÁØ¼ýÀÚº¸´Ù ÀÛÀ»¶§´Â ¿ÞÂÊ¿¡
-		if (top->left == NULL) { //ÇöÀç ÀÔ·ÂÇÏ´Â °ø°£ÀÇ ¿ÞÂÊÀÌ ºñ¾ú´Ù¸é
+	if (top->num > num) { //ìƒˆë¡œìš´ ìˆ«ìžì™€ ê¸°ì¤€ìˆ«ìžë³´ë‹¤ ìž‘ì„ë•ŒëŠ” ì™¼ìª½ì—
+		if (top->left == NULL) { //í˜„ìž¬ ìž…ë ¥í•˜ëŠ” ê³µê°„ì˜ ì™¼ìª½ì´ ë¹„ì—ˆë‹¤ë©´
 			data = (bin*)malloc(sizeof(bin));
 			data->num = num;
 			data->left = NULL;
@@ -60,7 +62,7 @@ void make_tree(bin*top, int num) { //ÁßÀ§¹ý
 		else
 			make_tree(top->left, num);
 	}
-	if (top->num <= num) { //»õ·Î¿î ¼ýÀÚ°¡ ±âÁØ¼ýÀÚº¸´Ù Å¬¶§´Â ¿À¸¥ÂÊ¿¡
+	if (top->num <= num) { //ìƒˆë¡œìš´ ìˆ«ìžê°€ ê¸°ì¤€ìˆ«ìžë³´ë‹¤ í´ë•ŒëŠ” ì˜¤ë¥¸ìª½ì—
 		if (top->right == NULL) {
 			data = (bin*)malloc(sizeof(bin));
 			data->num = num;
