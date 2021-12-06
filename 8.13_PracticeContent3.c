@@ -1,3 +1,5 @@
+//2019.8.13 ì‘ì„±
+
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 #include <stdlib.h>
@@ -19,35 +21,35 @@ bin *root =NULL;
 int main() {
 	int i, num;
 	arr_make();
-	printf("====ÀÌÁøÆ®¸®ÀÔ·Â====\n");
+	printf("====ì´ì§„íŠ¸ë¦¬ì…ë ¥====\n");
 	for (i = 0; i < 100; i++) {
 		input(a[i]);
 	}
-	printf("====¿À¸§Â÷¼ø====\n");
+	printf("====ì˜¤ë¦„ì°¨ìˆœ====\n");
 	view(root);
-	printf("====³»¸²Â÷¼ø====\n");
+	printf("====ë‚´ë¦¼ì°¨ìˆœ====\n");
 	view_rev(root);
-	printf("°Ë»öÇÒ ¼ıÀÚ ÀÔ·Â: ");
+	printf("ê²€ìƒ‰í•  ìˆ«ì ì…ë ¥: ");
 }
 
 void search(bin*top,int num) {
 	if (top->num == num)
-		printf("Ã£¾Ò´Ù\n");
+		printf("ì°¾ì•˜ë‹¤\n");
 	if (top->num < num) {
 		if (top->right == NULL)
-			printf("¾ø´Â ¼ıÀÚÀÔ´Ï´Ù.\n");
+			printf("ì—†ëŠ” ìˆ«ìì…ë‹ˆë‹¤.\n");
 		else
 			search(top->right, num);
 	}
 	if (top->num > num) {
 		if (top->left == NULL)
-			printf("¾ø´Â ¼ıÀÚÀÔ´Ï´Ù\n");
+			printf("ì—†ëŠ” ìˆ«ìì…ë‹ˆë‹¤\n");
 		else
 			search(top->left, num);
 	}
 }
 
-void view_rev(bin*show) {//ÁßÀ§¹ı
+void view_rev(bin*show) {//ì¤‘ìœ„ë²•
 	if (show->right != NULL)
 		view_rev(show->right);
 	printf("%d\n", show->num);
@@ -66,10 +68,10 @@ void input(int num) {
 		make_tree(root, num);
 }
 
-void make_tree(bin*top, int num) { //ÁßÀ§¹ı
+void make_tree(bin*top, int num) { //ì¤‘ìœ„ë²•
 	bin*data;
-	if (top->num > num) { //»õ·Î¿î ¼ıÀÚ¿Í ±âÁØ¼ıÀÚº¸´Ù ÀÛÀ»¶§´Â ¿ŞÂÊ¿¡
-		if (top->left == NULL) { //ÇöÀç ÀÔ·ÂÇÏ´Â °ø°£ÀÇ ¿ŞÂÊÀÌ ºñ¾ú´Ù¸é
+	if (top->num > num) { //ìƒˆë¡œìš´ ìˆ«ìì™€ ê¸°ì¤€ìˆ«ìë³´ë‹¤ ì‘ì„ë•ŒëŠ” ì™¼ìª½ì—
+		if (top->left == NULL) { //í˜„ì¬ ì…ë ¥í•˜ëŠ” ê³µê°„ì˜ ì™¼ìª½ì´ ë¹„ì—ˆë‹¤ë©´
 			data = (bin*)malloc(sizeof(bin));
 			data->num = num;
 			data->left = NULL;
@@ -79,7 +81,7 @@ void make_tree(bin*top, int num) { //ÁßÀ§¹ı
 		else
 			make_tree(top->left, num);
 	}
-	if (top->num <= num) { //»õ·Î¿î ¼ıÀÚ°¡ ±âÁØ¼ıÀÚº¸´Ù Å¬¶§´Â ¿À¸¥ÂÊ¿¡
+	if (top->num <= num) { //ìƒˆë¡œìš´ ìˆ«ìê°€ ê¸°ì¤€ìˆ«ìë³´ë‹¤ í´ë•ŒëŠ” ì˜¤ë¥¸ìª½ì—
 		if (top->right == NULL) {
 			data = (bin*)malloc(sizeof(bin));
 			data->num = num;
@@ -92,7 +94,7 @@ void make_tree(bin*top, int num) { //ÁßÀ§¹ı
 	}
 }
 
-void arr_make() { //100Å©±âÀÇ ¹è¿­¿¡ 1~500»çÀÌÀÇ ¼ıÀÚ¸¦ ÀÔ·Â&Ãâ·Â
+void arr_make() { //100í¬ê¸°ì˜ ë°°ì—´ì— 1~500ì‚¬ì´ì˜ ìˆ«ìë¥¼ ì…ë ¥&ì¶œë ¥
 	int i, j;
 	srand((int)time(NULL));
 	for (i = 0; i < 100; i++) {
